@@ -869,7 +869,11 @@
     const ref = params.get("ref");
 
     if (ref) {
-      localStorage.setItem("referral_source", ref);
+      try {
+        localStorage.setItem("referral_source", ref);
+      } catch (e) {
+        // localStorage blocked — fall back to cookie only
+      }
       document.cookie =
         "referral_source=" +
         encodeURIComponent(ref) +
