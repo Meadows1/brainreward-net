@@ -849,11 +849,19 @@
   }
 
   function getRef() {
-    return (
-      localStorage.getItem("referral_source") ||
-      getCookie("referral_source") ||
-      "unknown"
-    );
+    let ref = "";
+    try {
+      ref = localStorage.getItem("referral_source") || "";
+    } catch (e) {
+      ref = "";
+    }
+    if (!ref) {
+      ref = getCookie("referral_source") || "";
+    }
+    if (!ref) {
+      ref = "unknown";
+    }
+    return ref;
   }
 
   function setRef() {
