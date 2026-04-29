@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Reward | Supports Calm Focus & Mental Clarity</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #5a67d8;
+            --primary-dark: #4c51bf;
+            --secondary: #667eea;
+            --accent: #ed8936;
+            --accent-hover: #dd6b20;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --success: #38a169;
+            --savings: #e53e3e;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container { 
+            max-width: 720px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* AFFILIATE DISCLOSURE BAR */
+        .disclosure-bar {
+            background: #2d3748;
+            color: rgba(255,255,255,0.85);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.78rem;
+        }
+        
+        /* HERO */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
+            color: var(--white); 
+            padding: 50px 0 45px; 
+            text-align: center; 
+        }
+        
+        .age-disclaimer {
+            font-size: 0.8rem;
+            opacity: 0.85;
+            margin-bottom: 16px;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+        
+        .hero h1 { 
+            font-size: clamp(1.5rem, 5vw, 2.1rem); 
+            font-weight: 800; 
+            margin-bottom: 14px; 
+            line-height: 1.25; 
+        }
+        
+        .hero .subheadline { 
+            font-size: clamp(0.98rem, 2.5vw, 1.12rem); 
+            margin-bottom: 26px; 
+            opacity: 0.92; 
+            max-width: 540px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.6;
+        }
+        
+        .cta-button { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: var(--white); 
+            padding: 16px 32px; 
+            font-size: 1rem; 
+            font-weight: 700; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(237,137,54,0.35); 
+            transition: all 0.25s ease; 
+            margin: 6px 0;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 16px rgba(237,137,54,0.45); 
+            background: var(--accent-hover);
+        }
+        
+        .trust-badges { 
+            display: flex; 
+            justify-content: center; 
+            gap: 18px; 
+            margin-top: 20px; 
+            flex-wrap: wrap; 
+            font-size: 0.84rem; 
+            opacity: 0.9; 
+        }
+        
+        .text-link {
+            display: block;
+            margin-top: 16px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+        
+        /* SECTIONS */
+        .section { padding: 45px 0; }
+        .section-alt { background: var(--bg-light); }
+        
+        h2 { 
+            font-size: clamp(1.3rem, 4vw, 1.7rem); 
+            font-weight: 700; 
+            margin-bottom: 12px; 
+            text-align: center; 
+            color: var(--text); 
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 540px;
+            margin: 0 auto 26px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        p { 
+            margin-bottom: 14px; 
+            font-size: 1rem; 
+            color: var(--text-light);
+            line-height: 1.65;
+        }
+        
+        /* EMAIL CAPTURE */
+        .email-capture {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin: 24px 0;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .email-capture h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .email-capture p {
+            font-size: 0.93rem;
+            margin-bottom: 18px;
+        }
+        
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+        
+        .email-form input {
+            padding: 13px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.97rem;
+            font-family: inherit;
+        }
+        
+        .email-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .email-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 13px 22px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.97rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+        
+        .email-form button:hover {
+            background: var(--primary-dark);
+        }
+        
+        .privacy-note {
+            font-size: 0.76rem;
+            color: #a0aec0;
+            margin-top: 12px;
+        }
+        
+        /* BENEFITS GRID */
+        .benefits-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+            gap: 16px; 
+            margin-top: 24px; 
+        }
+        
+        .benefit-item { 
+            display: flex; 
+            align-items: flex-start; 
+            background: var(--white); 
+            padding: 18px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .benefit-icon { 
+            font-size: 1.5rem; 
+            margin-right: 12px; 
+            flex-shrink: 0; 
+        }
+        
+        .benefit-text h4 { 
+            font-size: 1.02rem; 
+            margin-bottom: 3px; 
+            color: var(--text); 
+        }
+        
+        .benefit-text p { 
+            font-size: 0.92rem; 
+            margin: 0; 
+        }
+        
+        /* STEPS */
+        .steps { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 14px; 
+            margin-top: 24px; 
+        }
+        
+        .step { 
+            display: flex; 
+            align-items: center; 
+            background: var(--white); 
+            padding: 18px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .step-number { 
+            background: var(--primary); 
+            color: var(--white); 
+            width: 38px; 
+            height: 38px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            margin-right: 14px; 
+            flex-shrink: 0; 
+        }
+        
+        .step-content h4 { 
+            font-size: 1.05rem; 
+            margin-bottom: 3px; 
+            color: var(--text); 
+        }
+        
+        .step-content p {
+            margin: 0;
+            font-size: 0.94rem;
+        }
+        
+        /* DIFFERENTIATION */
+        .diff-box {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            margin: 22px 0;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .diff-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-size: 1.08rem;
+        }
+        
+        .diff-box p {
+            margin: 0;
+            font-size: 0.97rem;
+        }
+        
+        /* PRICING BOX */
+        .pricing-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #fffaf0 100%);
+            border: 2px solid var(--savings);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .pricing-box .retail {
+            text-decoration: line-through;
+            color: #718096;
+            font-size: 1.05rem;
+        }
+        
+        .pricing-box .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--savings);
+            margin: 6px 0;
+        }
+        
+        .pricing-box .savings {
+            background: var(--savings);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-box .note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* TESTIMONIALS */
+        .testimonial { 
+            background: var(--white); 
+            padding: 22px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04); 
+            margin: 14px 0; 
+            border-left: 4px solid var(--primary); 
+        }
+        
+        .testimonial-text { 
+            font-size: 0.97rem; 
+            font-style: italic; 
+            color: var(--text-light); 
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author { 
+            font-weight: 700; 
+            color: var(--text); 
+            font-size: 0.93rem;
+        }
+        
+        .testimonial-detail {
+            font-size: 0.82rem;
+            color: #718096;
+            margin-top: 3px;
+        }
+        
+        .stars { 
+            color: #f6ad55; 
+            font-size: 1rem; 
+            margin-bottom: 8px; 
+        }
+        
+        .sponsored-tag {
+            font-size: 0.75rem;
+            color: #a0aec0;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* FAQ */
+        .faq-item { 
+            background: var(--white); 
+            margin-bottom: 10px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .faq-question { 
+            padding: 16px 18px; 
+            font-weight: 700; 
+            color: var(--text); 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            font-size: 0.96rem;
+        }
+        
+        .faq-question:hover { background: #f7fafc; }
+        
+        .faq-answer { 
+            padding: 0 18px 14px; 
+            color: var(--text-light); 
+            display: none;
+            line-height: 1.6;
+            font-size: 0.94rem;
+        }
+        
+        .faq-item.active .faq-answer { display: block; }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+        
+        /* FINAL CTA */
+        .final-cta { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
+            color: var(--white); 
+            padding: 50px 0; 
+            text-align: center; 
+        }
+        
+        .final-cta h2 { 
+            color: var(--white); 
+            font-size: clamp(1.25rem, 4vw, 1.7rem); 
+            margin-bottom: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .final-cta > .container > p { 
+            color: rgba(255,255,255,0.9); 
+            font-size: 1rem; 
+            max-width: 500px; 
+            margin: 0 auto 18px; 
+        }
+        
+        .risk-reversal {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 12px 0 20px;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+        
+        .reassurance {
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+        
+        .reassurance p {
+            color: rgba(255,255,255,0.9);
+            margin: 5px 0;
+            font-size: 0.87rem;
+        }
+        
+        /* DISCLAIMER */
+        .disclaimer { 
+            background: #edf2f7; 
+            padding: 28px 0; 
+            font-size: 0.74rem; 
+            color: #718096; 
+            text-align: center; 
+        }
+        
+        .disclaimer p { 
+            font-size: 0.74rem; 
+            margin-bottom: 5px;
+            color: #718096;
+        }
+        
+        .center-cta {
+            text-align: center;
+            margin-top: 22px;
+        }
+        
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero { padding: 40px 0 38px; }
+            .section { padding: 38px 0; }
+            .final-cta { padding: 42px 0; }
+            
+            .cta-button { 
+                padding: 14px 24px; 
+                font-size: 0.96rem; 
+                display: block; 
+                width: 100%;
+                max-width: 280px;
+                margin: 6px auto; 
+            }
+            
+            .benefits-grid { grid-template-columns: 1fr; }
+            
+            .step { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 16px;
+            }
+            
+            .step-number { 
+                margin-right: 0; 
+                margin-bottom: 10px; 
+            }
+            
+            .benefit-item { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+            
+            .benefit-icon { 
+                margin-right: 0; 
+                margin-bottom: 6px; 
+            }
+            
+            .email-capture, .solution-box, .diff-box, .testimonial, .pricing-box {
+                padding: 20px;
+            }
+            
+            .trust-badges { flex-direction: column; gap: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- AFFILIATE DISCLOSURE -->
+    <div class="disclosure-bar">
+        <div class="container">
+            This page contains affiliate links. We may earn a commission from qualifying purchases.
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="age-disclaimer">Intended for Adults 18+</div>
+            
+            <h1>Supports Calm Focus & Mental Clarity</h1>
+            <p class="subheadline">A non-stimulant formula designed to support cognitive function with amino acids, adaptogens, and Prodosome® technology. No caffeine. No jitters. Just nutritional support for your brain's natural function.</p>
+            
+            <a href="https://vni.life/?ref=EVERETTMEADOWS" class="cta-button">See If Brain Reward Is Right for You →</a>
+            
+            <div class="trust-badges">
+                <div>✓ Non-Stimulant Formula</div>
+                <div>✓ 90-Day Money-Back Guarantee</div>
+                <div>✓ Save 20% on Subscription</div>
+            </div>
+            
+            <a href="https://vni.life/?ref=EVERETTMEADOWS" class="text-link">View full product details →</a>
+        </div>
+    </section>
+
+    <!-- EMAIL CAPTURE SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="email-capture">
+                <h3>Get the Focus & Clarity Guide (Free)</h3>
+                <p>3 simple habits that support mental clarity—delivered to your inbox.</p>
+                <form class="email-form" action="https://formspree.io/f/mwvaznbg" method="POST">
+                    <input type="text" name="name" placeholder="First name" required>
+                    <input type="email" name="email" placeholder="Email address" required>
+                    <button type="submit">Send Me the Guide →</button>
+                </form>
+                <p class="privacy-note">No spam. Unsubscribe anytime. Intended for adults 18+.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFESTYLE BENEFITS SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>What Brain Reward Supports</h2>
+            <p class="section-intro">A non-stimulant formula designed to help support cognitive function and mental wellness.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🧠</div>
+                    <div class="benefit-text">
+                        <h4>Calm Focus</h4>
+                        <p>Supports the ability to maintain attention without the jitters of caffeine.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <div class="benefit-text">
+                        <h4>Mental Clarity</h4>
+                        <p>Helps promote clear thinking and cognitive sharpness throughout the day.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔋</div>
+                    <div class="benefit-text">
+                        <h4>Steady Energy</h4>
+                        <p>Supports consistent mental stamina without the afternoon crash.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <div class="benefit-text">
+                        <h4>Stress Resilience</h4>
+                        <p>Adaptogenic herbs help support the body's response to daily stress.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-text">
+                        <h4>Natural Drive</h4>
+                        <p>Supports motivation and the ability to follow through on tasks.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌿</div>
+                    <div class="benefit-text">
+                        <h4>Clean Formula</h4>
+                        <p>No synthetic stimulants. Just nutrients your body can recognize and use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2>How It Supports Your Brain</h2>
+            <p class="section-intro">A four-step approach to nutritional cognitive support.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Nourish</h4>
+                        <p>L-Tyrosine and DL-Phenylalanine provide amino acids that help support neurotransmitter production.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Balance</h4>
+                        <p>5-HTP and B-vitamins help support serotonin and dopamine pathways for mood and clarity.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Calm</h4>
+                        <p>Rhodiola and Passionflower help promote calm and support the body's stress response.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Absorb</h4>
+                        <p>Prodosome® technology helps deliver nutrients to cells for better uptake.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY IT'S DIFFERENT SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Why This Formula Is Different</h2>
+            
+            <div class="diff-box">
+                <h4>🧬 Prodosome® Encapsulation Technology</h4>
+                <p>Most supplements pass through the body without full absorption. Brain Reward uses a proprietary delivery system designed to help protect nutrients and support cellular uptake—so your body actually gets what it needs.</p>
+            </div>
+            
+            <div class="diff-box" style="border-left-color: var(--success);">
+                <h4>☕ 100% Non-Stimulant</h4>
+                <p>No caffeine. No jitters. No crash. Just amino acids, adaptogenic herbs, and vitamins designed to support your brain's natural function.</p>
+            </div>
+            
+            <div class="diff-box" style="border-left-color: var(--accent);">
+                <h4>⚗️ GMP-Certified Manufacturing</h4>
+                <p>Manufactured in a facility that follows Good Manufacturing Practices for quality and consistency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2>Simple Pricing. Real Savings.</h2>
+            <div class="pricing-box">
+                <span class="savings">SAVE 20%</span>
+                <p class="retail">Retail: $115.00</p>
+                <p class="price">$92.00</p>
+                <p class="note">With subscription (auto-renew). Cancel or modify anytime. Free U.S. shipping. Intended for adults 18+.</p>
+            </div>
+            <div class="center-cta">
+                <a href="https://vni.life/?ref=EVERETTMEADOWS" class="cta-button">Check Today's Availability →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>What People Are Saying</h2>
+            <p class="section-intro">Results may vary. These statements represent individual experiences.</p>
+            
+            <div class="testimonial">
+                <p class="sponsored-tag">#Ad</p>
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">Tabitha, 34, marketing professional and working parent, reports feeling calmer and more focused after using Brain Reward. She credits the non-stimulant formula with supporting her mental clarity and helping her maintain steady energy throughout the day. Results may vary. Intended for adults 18+.</p>
+                <p class="testimonial-author">— Tabitha, 34, Marketing Professional</p>
+                <p class="testimonial-detail">Working parent</p>
+            </div>
+            
+            <div class="testimonial">
+                <p class="sponsored-tag">#Ad</p>
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">Michael, 41, software engineer, notes that Brain Reward helps support his afternoon focus during long work sessions. He appreciates the non-stimulant formula that promotes mental clarity without the jitters associated with caffeine. Results may vary. Intended for adults 18+.</p>
+                <p class="testimonial-author">— Michael, 41, Software Engineer</p>
+                <p class="testimonial-detail">Remote worker, 10+ years in tech</p>
+            </div>
+            
+            <div class="testimonial">
+                <p class="sponsored-tag">#Ad</p>
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">Jennifer, 47, business consultant, noticed increased mental clarity and steadier focus after six weeks of consistent use. She reports feeling more alert in the afternoons and appreciates the non-stimulant support for her cognitive function. Results may vary. Intended for adults 18+.</p>
+                <p class="testimonial-author">— Jennifer, 47, Business Consultant</p>
+                <p class="testimonial-detail">Frequent traveler, high-stress role</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    What is Brain Reward?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">Brain Reward is a dietary supplement that combines amino acids, vitamins, and adaptogenic herbs designed to help support focus, mental clarity, and calm. It's formulated for adults 18+ seeking cognitive support without stimulants.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Does it contain caffeine or stimulants?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">No. Brain Reward is completely non-stimulant. It works by providing nutritional building blocks your brain can use—not by artificially forcing alertness with caffeine or other stimulants.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    How long until I notice benefits?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">Many people report initial improvements within 2-3 weeks of consistent use, with optimal support developing after 60-90 days. Everyone's body is different, so individual results may vary.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Is Brain Reward safe?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">Brain Reward is manufactured in a GMP-certified facility with quality ingredients. As with any supplement, consult your healthcare provider before use—especially if you have a medical condition, take medications, or are pregnant or nursing. Intended for adults 18+.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    What is the guarantee?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">Brain Reward comes with a 90-day satisfaction guarantee. If you're not satisfied, you can return it for a full refund. No questions asked.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="age-disclaimer">Intended for Adults 18+</div>
+            
+            <h2>Try It Risk-Free for 90 Days</h2>
+            <p>See if Brain Reward is right for you. Cancel or modify your subscription anytime.</p>
+            
+            <div class="risk-reversal">90-Day Money-Back Guarantee</div>
+            
+            <a href="https://vni.life/?ref=EVERETTMEADOWS" class="cta-button" style="background: var(--white); color: var(--primary); font-size: 1.05rem; padding: 16px 32px;">Check Availability & Get Started →</a>
+            
+            <div class="reassurance">
+                <p>✓ 90-Day Money-Back Guarantee</p>
+                <p>✓ Save 20% with Subscription ($92 vs $115)</p>
+                <p>✓ Free U.S. Shipping</p>
+                <p>✓ Cancel or Modify Anytime</p>
+            </div>
+            
+            <a href="https://vni.life/?ref=EVERETTMEADOWS" class="text-link">View full product details →</a>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="disclaimer">
+        <div class="container">
+            <p><strong>Disclaimer:</strong> These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p>Individual results may vary. Consult your healthcare provider before starting any supplement regimen. Intended for adults 18+.</p>
+            <p>This page contains affiliate links. We may earn a commission from qualifying purchases.</p>
+            <p>&copy; 2026 Brain Reward Affiliate. All rights reserved.</p>
+        </div>
+    </section>
+
+<script>
+(function () {
+
+  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfQ-YUXqoqtk7yf7pi1zxrQnzX-BItpH6R6enkIytiT_8mvfQ/formResponse";
+
+  function getCookie(name) {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const [key, value] = cookie.split("=");
+      if (key === name) return decodeURIComponent(value || "");
+    }
+    return "";
+  }
+
+  function getRef() {
+    return (
+      localStorage.getItem("referral_source") ||
+      getCookie("referral_source") ||
+      "unknown"
+    );
+  }
+
+  function setRef() {
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
+
+    if (ref) {
+      localStorage.setItem("referral_source", ref);
+      document.cookie =
+        "referral_source=" +
+        encodeURIComponent(ref) +
+        "; path=/; max-age=" +
+        60 * 60 * 24 * 90;
+    }
+  }
+
+  function handleLeadFormSubmission() {
+    const form = document.querySelector("form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      const emailInput = form.querySelector("input[type='email']");
+      if (!emailInput) return;
+
+      const email = emailInput.value;
+      const ref = getRef();
+
+      const formData = new FormData();
+      formData.append("entry.1318634051", email);
+      formData.append("entry.939384145", ref);
+
+      fetch(FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      });
+    });
+  }
+
+  function trackClicks() {
+    document.querySelectorAll("a[href]").forEach(function(link) {
+      const href = link.href.toLowerCase();
+
+      if (
+        href.includes("vni.life") ||
+        href.includes("victorynutrition")
+      ) {
+        link.addEventListener("click", function() {
+          const ref = getRef();
+
+          const formData = new FormData();
+          formData.append("entry.1318634051", "click_only");
+          formData.append("entry.939384145", ref + " | CLICK");
+
+          fetch(FORM_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+          });
+        });
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setRef();
+    handleLeadFormSubmission();
+    trackClicks();
+  });
+
+})();
+</script>
+
+</body>
+</html>
